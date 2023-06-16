@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services
+        https://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <services>
+        <!-- Default configuration for services in *this* file -->
+        <defaults autowire="true" autoconfigure="true" public="false"/>
+
+        <!-- Define the GRPC server service -->
+        <service id="grpc_server" class="OpenSwoole\GRPC\Server" public="true">
+            <argument type="collection">
+                <argument key="host">127.0.0.1</argument>
+                <argument key="port">9501</argument>
+            </argument>
+        </service>
+
+        <!-- Define the GRPC server command service -->
+        <service id="SymfonyGRPCServerBundle\Command\GRPCServeCommand">
+            <argument>%kernel.project_dir%</argument>
+            <tag name="console.command"/>
+        </service>
+    </services>
+</container>

@@ -1,0 +1,27 @@
+{
+  "name": "keyvangholami/symfony-grpc-server-bundle",
+  "description": "SymfonyGRPCServerBundle is a GRPC server bundle for Symfony, leveraging Open Swoole Server. It enables swift setup for asynchronous I/O and concurrent programming in PHP for building robust microservices and real-time web apps.",
+  "license": "MIT",
+  "type": "symfony-bundle",
+  "require": {
+    "php": ">=7.4",
+    "symfony/framework-bundle": "^4.4 || ^5.0",
+    "openswoole/core": "^22.1.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "KeyvanGholami\\GRPCServerBundle\\": "src/"
+    }
+  },
+  "extra": {
+    "symfony": {
+      "allow-contrib": "true"
+    }
+  },
+  "authors": [
+    {
+      "name": "Keyvan Gholami",
+      "email": "keyvangholami@icloud.com"
+    }
+  ]
+}
